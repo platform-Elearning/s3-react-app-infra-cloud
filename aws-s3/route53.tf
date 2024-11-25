@@ -20,7 +20,7 @@ resource "aws_route53_record" "$SUBDOMINIO" {
 
 # Crear el registro dev
 resource "aws_route53_record" "dev" {
-  name    = " $SUBDOMINIO-dev.${var.DOMINIO}"
+  name    = "$SUBDOMINIO-dev.${var.DOMINIO}"
   type    = "A"
   zone_id = data.aws_route53_zone.my_zone.zone_id
 
