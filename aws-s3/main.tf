@@ -27,6 +27,8 @@ resource "aws_s3_bucket" "bucket_web" {
 
   website {
     index_document = "index.html"
+    error_document = "index.html"
+
   }
 
 }
@@ -40,6 +42,7 @@ resource "aws_s3_bucket" "bucket_web_dev" {
 
   website {
     index_document = "index.html"
+    error_document = "index.html"
   }
 
 }
