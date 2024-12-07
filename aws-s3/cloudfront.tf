@@ -101,6 +101,14 @@ resource "aws_cloudfront_distribution" "s3_distribution_dev" {
     max_ttl                = 86400
   }
 
+  # Redirección de errores 404 a index.html
+  custom_error_response {
+    error_code            = 404
+    response_page_path    = "/index.html"
+    response_code         = 200
+    error_caching_min_ttl = 60
+  }
+
   aliases = ["$SUBDOMINIO-dev.${var.DOMINIO}"]
 
   price_class = "PriceClass_100"
